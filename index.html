@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Chicago institue</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        $(window).load(function () {
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <h6>Powered by the data of <i> Art Institute of Chicago</i> </h6>
+    </header>
+
+    <section class="search-container">
+        <div class="hero">
+            <h1>Welcome to the Art Learning Platform!</h1>
+            <p>Explore the world of art with our extensive collection from the Art Institute of Chicago.</p>
+            <form id="artist-form">
+                <input class="inputArtist" type="text" minlength="1" maxlength="20" placeholder="Search">
+            </form>
+        </div>
+    </section>
+
+    <section class="artist-list-container artist-list-container-hidden">
+        <div class="artist-list [ list ] artist-list-hidden">
+            <div class="inner-list">
+                <h2 class="title">Artists</h2>
+                <div class="artists-display">
+                    <div class="artists-content" id="artistsContent">
+                        <div id="artistsDisplay">
+                            <button class="btn hidden" id='refreshBtn'
+                                onclick="location.href=`http://127.0.0.1:5501/index.html`">
+                                Try again
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pagination-container">
+                        <div class="pagination">
+                            <span class="pagination_prev">
+                                <i class="fa fa-arrow-left"></i>
+                            </span>
+                            <div class="pagination_list">
+                                <span class="pagination_page"></span>
+                            </div>
+                            <span class="pagination_next">
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="mt-5 pt-5 pb-5 footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.617075379785!2d-87.62628822321247!3d41.87958447124158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca3e2d94695%3A0x4829f3cc9ca2d0de!2sThe%20Art%20Institute%20of%20Chicago!5e0!3m2!1sen!2srs!4v1712057582241!5m2!1sen!2srs"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p>111 S Michigan Ave, Chicago, IL 60603, United States</p>
+                        <p class="mb-0"><i class="fa fa-phone mr-3"></i>(630) 898-2003</p>
+                        <p><i class="fa fa-envelope-o mr-3"></i>info@api.com</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2024. All Rights Reserved.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="app.js"></script>
+
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        $(window).load(function () {
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+
+<body>
+    <section class="container">
+        <div class="se-pre-con"></div>
+        <div class="main">
+            <form>
+                <button id="back_button" class="btn" type="reset"
+                    onclick="location.href='http://127.0.0.1:5501/artist-artworks/artist_artworks.html'">
+                    &larr;
+                </button>
+
+            </form>
+
+            <div class="detailes">
+                <p>Artwork by:</p>
+                <h2 id="artistName">Artist name</h2>
+            </div>
+            <div class="img-container">
+                <p class="hidden" id="picture_error">The picture is not available at the moment.</p>
+                <img id="picture">
+            </div>
+            <div class="thumbnail">
+                <h3 id="thumbnail-text"></h3>
+            </div>
+            <div class="date">
+                <h5 id="date-text"></h5>
+            </div>
+            <div class="description">
+                <div class="description-text" id="text">
+                    <ul id="list"></ul>
+                </div>
+            </div>
+            <div class="additionals">
+                <h5>Artwork classification:</h5>
+                <ul class="classification"></ul>
+                <h5>Artwork materials:</h5>
+                <ul class="materials"></ul>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+<script src="app.js"></script>
+
+</html>

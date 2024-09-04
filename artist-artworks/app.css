@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(10deg, rgba(248, 250, 250, 1) 0%, rgba(240, 237, 244, 1) 41%, rgba(92, 92, 93, 1) 84%);
+}
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_10.gif) center no-repeat #fff;
+}
+
+/* First field */
+.artist-content {
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    /* gap: 2.5rem; */
+    width: 100%;
+    max-width: 1000px;
+    margin: 5vh auto;
+}
+
+.card {
+    border-radius: 16px;
+    width: 50%;
+}
+
+.person {
+    padding: 10px;
+    background-color: white;
+    color: wheat;
+
+    .inner-person {
+        padding: 20px;
+        padding-top: 40px;
+        background: linear-gradient(308deg, rgba(119, 119, 119, 1) 12%, rgba(4, 3, 0, 1) 68%);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+}
+
+.btn {
+    color: wheat;
+    background: linear-gradient(90deg, rgba(119, 119, 119, 1) 12%, rgba(4, 3, 0, 1) 68%);
+    padding: 5px 10px;
+    margin: 5px 0px 0px 5px;
+    border: solid #1e6e96 2px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px 25px;
+    transition: 1000ms;
+    transform: translateY(0);
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: 1000ms;
+    scale: 1.2;
+    transform: translateY(-0px);
+    background-color: #b2e8cc;
+    color: #179c8a;
+    border: solid 2px #179c8a;
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Second field */
+.artworks-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 5vh auto;
+}
+
+
+.artworks-display {
+    padding: 10px;
+    background-color: white;
+    color: wheat;
+
+    .inner-display {
+        padding: 20px;
+        padding-top: 40px;
+        background: linear-gradient(308deg, rgba(119, 119, 119, 1) 12%, rgba(4, 3, 0, 1) 68%);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        display: grid;
+        justify-content: center;
+    }
+
+    .artworks {
+        display: grid;
+        justify-content: center;
+
+        text-align: center;
+        max-height: 400px;
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+
+    .artworks-content a {
+        color: wheat;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: background-color .3s;
+        margin: 0 4px;
+    }
+
+    .artworks-content a.active {
+        background-color: #4CAF50;
+        color: white;
+        border: 1px solid #4CAF50;
+    }
+
+    .artworks-content a:hover:not(.active) {
+        background-color: rgb(81, 1, 1);
+        transition: 1.5s;
+        scale: 1.2;
+        transform: translateY(0px);
+    }
+
+    .pagination-container {
+        margin: 16px 0;
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .pagination_prev,
+    .pagination_next {
+        border: 1px solid #000;
+        border-radius: 50%;
+        font-size: 20px;
+        padding: 5px;
+        transition: background-color .3s;
+        margin: 0 4px;
+    }
+
+    .pagination_prev {
+        margin-right: 10px;
+    }
+
+    .pagination_next {
+        margin-left: 10px;
+    }
+
+    .pagination span {
+        transition: background-color .3s;
+        margin: 0 4px;
+    }
+
+    .pagination_prev.active,
+    .pagination_next.active {
+        background-color: #0a7b0e;
+        color: white;
+        border: 1px solid #4CAF50;
+    }
+
+    .pagination_prev:hover:not(.active),
+    .pagination_next:hover:not(.active) {
+        background-color: #77d9a8;
+        transition: 2s;
+        transform: translateY(0px);
+        cursor: pointer;
+    }
+
+    .pagination_page {
+        margin: 0 6px;
+        padding: 8px;
+        display: flex;
+    }
+
+    .pagination_page-current {
+        font-weight: 700;
+    }
+
+    .pagination_prev-disabled,
+    .pagination_next-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+}
+
+.artworks-list-hidden,
+.pagination-container-hidden,
+.artists-list-hidden,
+.btn-hidden {
+    display: none;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    text-align: center;
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    bottom: 50;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 2px 16px;
+}
+
+.modal-header {
+    background-color: black;
+    color: white;
+}
+
+.modal-body {
+    background: linear-gradient(308deg, rgba(119, 119, 119, 1) 12%, rgba(4, 3, 0, 1) 68%);
+    color: wheat;
+}
+
+.modal-footer {
+    background-color: wheat;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}

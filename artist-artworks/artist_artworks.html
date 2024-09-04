@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Chicago - Artist</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <script>
+        $(window).load(function () {
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <button class="btn" onclick="location.href=`http://127.0.0.1:5501/index.html`">
+            &larr;</button>
+
+        <div class="se-pre-con"></div>
+    </header>
+
+    <section class="artist-content">
+        <div class="person [ card ]">
+            <div class="inner-person">
+                <h3 id="artist_name">Name Surname</h3>
+                <p>Birth year: <span id="birthYear"></span></p>
+                <p>Death year: <span id="deathYear"></span></p>
+                <p>Age of living: <span id="age"></span></p>
+                <p>
+                    <span id="desc"></span>
+                    <button id="desc_btn" class="btn btn-hidden">See more</button>
+                </p>
+                <button id="artworks_btn" class="btn">Artworks</button>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="descModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Description</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="modalDesc"></p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="artworks-list artworks-list-hidden">
+        <div class="artworks-display [ card ]">
+            <div class="inner-display">
+                <h2 class="title">Artworks</h2>
+                <div class="artworks-content">
+
+                    <div class="artworks">
+
+                    </div>
+
+                    <div class="pagination-container">
+                        <div class="pagination">
+                            <span class="pagination_prev pagination_prev-disabled">
+                                <i class="fa fa-arrow-left"></i>
+                            </span>
+                            <div class="pagination_list">
+                                <span class="pagination_page pagination_page-current"></span>
+                            </div>
+                            <span class="pagination_next pagination_next-disabled">
+                                <i class="fa fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+
+<script src=" app.js"></script>
+
+</html>
